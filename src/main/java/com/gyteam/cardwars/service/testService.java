@@ -27,6 +27,7 @@ public class testService {
     ResponseEntity<GameCard> findByName(@PathVariable String name) {
         Card card = cardRepository.findByName("Ancient Scholar").orElse(null);
         GameCard gameCard = cardMapper.toGameCard(card);
+        gameCard.getAction().action();
         return ResponseEntity.status(HttpStatus.OK)
                 .body(gameCard);
     }
