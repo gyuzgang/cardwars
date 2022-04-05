@@ -8,8 +8,8 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -21,17 +21,13 @@ import javax.persistence.Table;
 public class Card {
 
     @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
-
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "description")
-    private Integer description;
+    @Column(name = "description", nullable = false)
+    private String description;
 
-    @Column(name = "cost")
+    @Column(name = "cost", nullable = false)
     private Integer cost;
 
     @Column(name = "attack")
@@ -40,10 +36,12 @@ public class Card {
     @Column(name = "defense")
     private Integer defense;
 
-    @Column(name = "cardType")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "card_type", nullable = false)
     private CardType cardType;
 
-    @Column(name = "landType")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "land_type", nullable = false)
     private LandType landType;
 
 
