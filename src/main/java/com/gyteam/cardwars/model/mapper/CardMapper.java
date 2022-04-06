@@ -8,6 +8,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring", imports = {ActionUtils.class})
 public interface CardMapper {
 
@@ -18,4 +20,7 @@ public interface CardMapper {
     default void setAction(@MappingTarget GameCard gameCard) {
         gameCard.setAction(ActionUtils.getActionClassByName(gameCard.getName(), gameCard.getLandType().getName()));
     }
+
+    List<GameCard> toGameCardList(List<Card> cards);
+
 }
