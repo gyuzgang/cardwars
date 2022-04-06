@@ -1,13 +1,13 @@
 package com.gyteam.cardwars.model.actions.BluePlains;
 
-import com.gyteam.cardwars.model.actions.Action;
+import com.gyteam.cardwars.game.gamecard.cardability.FloopableAbility;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class AncientScholar implements Action {
+public class AncientScholar implements FloopableAbility {
 
     @Override
-    public void action() {
+    public void floop() {
         System.out.println("I'm a Ancient Scholar");
     }
 }

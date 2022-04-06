@@ -42,7 +42,7 @@ public class ActionUtilsTest {
 
     @Test
     void setBLuePlainsActionTest() {
-        var gameCards = getBLuePlainsCard();
+        GameCard gameCards = getBLuePlainsCard();
 
         gameCards.setAction(ActionUtils.getActionClassByName(gameCards.getName(), gameCards.getLandType().getName()));
         gameCards.getAction().action();
@@ -52,7 +52,7 @@ public class ActionUtilsTest {
 
     @Test
     void setRainbowActionTest() {
-        var gameCards = getRainbowCard();
+        GameCard gameCards = getRainbowCard();
 
         gameCards.setAction(ActionUtils.getActionClassByName(gameCards.getName(), gameCards.getLandType().getName()));
         gameCards.getAction().action();
@@ -61,7 +61,6 @@ public class ActionUtilsTest {
     }
 
     GameCard getBLuePlainsCard() {
-
         var card = new GameCard();
         card.setName(NAME_COOLDOG);
         card.setDescription(DESCRIPTION);

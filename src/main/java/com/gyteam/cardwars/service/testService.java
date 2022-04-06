@@ -27,9 +27,26 @@ public class testService {
     ResponseEntity<GameCard> findByName(@PathVariable String name) {
         Card card = cardRepository.findByName("Ancient Scholar").orElse(null);
         GameCard gameCard = cardMapper.toGameCard(card);
-        gameCard.getAction().action();
+//        gameCard.getAction().action();
         return ResponseEntity.status(HttpStatus.OK)
                 .body(gameCard);
     }
 
+    @GetMapping("/{name}")
+    ResponseEntity<GameCard> findByName2(@PathVariable String name) {
+        // find Card from repo
+        // find class by Card Name
+        // create object
+        // map Card to GameCard
+
+
+        Card card = cardRepository.findByName("Ancient Scholar").orElse(null);
+        GameCard gameCard = cardMapper.toGameCard(card);
+//        reflexionMethodGetClassByName(gameCard.getName());
+//        PunkCat punkCatcard =  new PunkCat();
+//        PunkCat punkCatcard = (PunkCat) CardMapper.toGameCard2(card);
+//        gameCard.getAction().action();
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(gameCard);
+    }
 }

@@ -1,5 +1,6 @@
 package com.gyteam.cardwars.model.mapper;
 
+import com.gyteam.cardwars.game.gamecard.card.GameCardAbs;
 import com.gyteam.cardwars.model.actions.ActionUtils;
 import com.gyteam.cardwars.model.dto.GameCard;
 import com.gyteam.cardwars.model.entity.Card;
@@ -15,6 +16,9 @@ public interface CardMapper {
 
     @Mapping(target = "action", ignore = true)
     GameCard toGameCard(Card card);
+
+    @Mapping(target = "action", ignore = true)
+    GameCardAbs toGameCard2(Card card);
 
     @AfterMapping
     default void setAction(@MappingTarget GameCard gameCard) {

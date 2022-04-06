@@ -38,5 +38,4 @@ public class ActionUtils {
         return str.replaceAll(CHAR_REGULAR, EMPTY_STRING);
     }
 
-
 }
